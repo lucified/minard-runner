@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 conf=/etc/gitlab-runner/config.toml
 
@@ -15,18 +15,17 @@ if [ "$1" = 'gitlab-runner'  ] && [ ! -f "$conf" ]; then
   export PGPASSWORD="$password"
   export PGDATABASE="$db"
 
-  until psql -q -c '\l' &> /dev/null; do
-    echo "Postgres is unavailable - sleeping"
-    sleep 2
+  token=""
+  min_length=15
+
+  until [ "${#token}" -gt "$min_length" ] && gitlab-runner register -n -r $token >/dev/null 2>&1; do
+    echo "Failed to register - sleeping"
+    sleep 5
+    token=`psql -q -A -t -c 'select runners_registration_token from application_settings;' 2>/dev/null`
   done
 
-  >&2 echo "Postgres is up - fetch runner registration token"
+  echo "Runner registered succesfully"
 
-  token=`psql -q -A -t -c 'select runners_registration_token from application_settings;'`
-  until gitlab-runner register -n -r $token; do
-    echo "Gitlab is unavailable - sleeping"
-    sleep 2
-  done
 fi
 
 exec "$@"
