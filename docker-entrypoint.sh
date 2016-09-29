@@ -6,7 +6,7 @@ conf=/etc/gitlab-runner/config.toml
 
 gettoken () { psql -q -A -t -c 'select runners_registration_token from application_settings;'; }
 
-if [ "$1" = 'gitlab-runner'  ] && [ ! -f "$conf" ]; then
+if [ "$1" = 'gitlab-runner'  ]; then
 
   if [[ -z "$DEBUG" ]] ; then
     exec 3>&1 &>/dev/null
