@@ -1,0 +1,25 @@
+
+machine:
+  node:
+    version: 6.1.0
+  services:
+    - docker
+
+dependencies:
+  override:
+    - npm install -g ecs-updater@~0.2.1 lucify-notifier
+
+test:
+  override:
+    - echo "No tests specified"
+
+database:
+  override:
+    - echo "No databases needed"
+
+deployment:
+  staging:
+    branch: lucified
+    commands:
+      - lucify-notifier ecs-updater
+

@@ -1,0 +1,10 @@
+{
+  "REGION": "eu-west-1",
+  "CLUSTER": "minard",
+  "SERVICE": "minard-runner-staging",
+  "CONTAINER": "runner",
+  "IMAGE": "runner",
+  "BUCKET": "lucify-configuration",
+  "KEY": "ecs_services/runner_staging",
+  "DOCKERFILE": "Dockerfile-lucify"
+}
