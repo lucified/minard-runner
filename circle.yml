@@ -1,13 +1,13 @@
 
 machine:
   node:
-    version: 6.1.0
+    version: 6.7
   services:
     - docker
 
 dependencies:
   override:
-    - npm install -g ecs-updater@~0.2.1 lucify-notifier@^0.1.2
+    - npm install -g ecs-updater@~0.2.1 lucify-notifier@^0.1.4
 
 test:
   override:
