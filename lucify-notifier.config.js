@@ -8,7 +8,7 @@ module.exports = {
     },
     committer: env.CIRCLE_USERNAME,
     build_url: env.CIRCLE_BUILD_URL,
-    environment: 'staging',
+    environment: env.LUCIFY_ENV === 'production' ? 'production' : 'staging',
   },
   github: {
     s3_credentials: 'lucify-configuration/lucify-notifier/github_integration_credentials.json',
