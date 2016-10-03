@@ -8,6 +8,8 @@ gettoken () { psql -q -A -t -c 'select runners_registration_token from applicati
 
 if [ "$1" = 'gitlab-runner'  ]; then
 
+  # delete the previous configuration
+  rm -rf /etc/gitlab-runner/config.toml
   if [[ -z "$DEBUG" ]] ; then
     exec 3>&1 &>/dev/null
   else
