@@ -7,7 +7,7 @@ machine:
 
 dependencies:
   override:
-    - npm install -g ecs-updater@~0.2.1 lucify-notifier@^0.1.4
+    - npm install -g ecs-updater@~0.2.1 lucify-notifier@^0.1.9
 
 test:
   override:
