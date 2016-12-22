@@ -9,5 +9,5 @@ module.exports = {
   IMAGE: 'runner',
   BUCKET: 'lucify-configuration',
   KEY: `ecs_services/runner_${env}`,
-  DOCKERFILE: 'Dockerfile-lucify',
+  DOCKERFILE: 'Dockerfile',
 };
