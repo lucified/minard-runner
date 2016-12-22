@@ -1,7 +1,7 @@
 
 # GitLab
 
-Fork of [gitlab-ce](https://github.com/ayufan/gitlab-ci-multi-runner) for
+Fork of [gitlab-ci-multi-runner](https://github.com/ayufan/gitlab-ci-multi-runner) for
 use with [minard-backend](https://github.com/lucified/minard-backend)
 
 ## Changes
