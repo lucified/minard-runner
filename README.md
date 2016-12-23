@@ -15,7 +15,3 @@ runners in production environments.
 ## License
 
 [MIT Expat license](LICENSE)
-
-## Lucify-specific documentation
-
-[Documentation](lucify-docs.md) for Lucify's internal use.
