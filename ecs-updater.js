@@ -1,4 +1,3 @@
-
 const env = process.env.LUCIFY_ENV === 'production' ? 'production' : 'staging';
 
 module.exports = {
@@ -10,4 +9,5 @@ module.exports = {
   BUCKET: 'lucify-configuration',
   KEY: `ecs_services/runner_${env}`,
   DOCKERFILE: 'Dockerfile',
+  TASKDEFINITION_SOURCE: 'ecs-only',
 };
