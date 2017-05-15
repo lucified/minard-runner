@@ -2,7 +2,7 @@ const env = process.env.LUCIFY_ENV === 'production' ? 'production' : 'staging';
 
 module.exports = {
   REGION: 'eu-west-1',
-  CLUSTER: 'minard',
+  CLUSTER: 'minard-external',
   SERVICE: `minard-runner-${env}`,
   CONTAINER: 'runner',
   IMAGE: 'runner',
